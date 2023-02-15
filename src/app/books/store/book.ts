@@ -5,4 +5,6 @@ export interface Book {
     cost: number
 }
 
-// state management store 
+export interface BookState{
+    books: Book[]
+}
