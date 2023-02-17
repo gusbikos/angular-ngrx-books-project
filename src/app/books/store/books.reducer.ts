@@ -2,11 +2,12 @@ import { createReducer, on } from "@ngrx/store";
 import { Book } from "./book";
 import { booksFetchAPISuccess, deleteBookAPISuccess, saveBookAPISuccess, updateBookAPISuccess } from "./books.action";
 
-export const initialState: ReadonlyArray<Book> = [
+export const initialState: ReadonlyArray<Book> = [  // read only array so i dont change the values directly.
 ]
 
 export const bookReducer = createReducer(
-    initialState,
+    initialState, // takes in the intial state which is the array of books
+    
     // here we register our action in order to change the state of the store
     on(booksFetchAPISuccess, (state, { allBooks }) => { // allBooks is the payload data we are sending to the action
         return allBooks

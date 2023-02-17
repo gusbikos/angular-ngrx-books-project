@@ -5,7 +5,11 @@
         </div>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col" *ngFor="let book of books$ | async">
+        <div class="col" *ngFor="let book of books$ | async"> 
+            <!-- In Angular, the async pipe is used to handle observables in the template. When used with an observable, the async pipe subscribes to the observable and automatically updates the view whenever a new value is emitted. 
+                This can be very useful for handling asynchronous data sources, such as data loaded from an HTTP request or a Redux store.In the example you provided, the books$ variable is an observable that emits an array of books. 
+                The *ngFor directive is used to iterate over the array and create a new element for each book in the array. The async pipe is used to subscribe to the books$ observable and update the view whenever a new array of books is emitted.
+            -->
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">{{book.title}}</h5>

@@ -2,7 +2,7 @@ import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { Book } from "./book";
 
 
-export const selectBooks = createFeatureSelector<Book[]>("mybooks")
+export const selectBooks = createFeatureSelector<Book[]>("mybooks") // selector fetches the state/data of the objects you are looking for
 
 export const selectBookById = (bookId: number) => {
     return createSelector(selectBooks, (books:Book[]) => {// first param = feature selector, which is grabbing all the books in the Book array and injecting them into the arrow function. createSelector = selecting a specific element from state-- does no accept any input parameter but we want to filter some type of data.

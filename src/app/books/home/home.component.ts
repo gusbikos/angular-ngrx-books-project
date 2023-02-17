@@ -19,11 +19,15 @@ export class HomeComponent implements OnInit {
 
   constructor(private store: Store, private appStore: Store<Appstate>) {} // inject store in constructor
 
+/* selectBooks: This is a selector function defined in the ngrx store. It selects a specific slice of the store, in this case, the slice of state that contains information about books.
+this.store: This is an instance of the Store class in ngrx. The store is a central repository for state in an ngrx application.
+select: This is a function provided by ngrx that takes a selector function as an argument and returns an observable that emits the selected state whenever the state changes.
+pipe: This is a method on the Observable class that allows for the chaining of multiple operators to manipulate the data emitted by the observable.
+books$: This is a variable that holds the observable that emits the selected state, in this case, the books from the store.
+So, in summary, the books$ variable is an observable that emits the selected books from the ngrx store. By using the pipe method, you can chain multiple operators to transform the emitted data, such as filtering, mapping, or sorting.
+*/
+
   books$ = this.store.pipe(select(selectBooks))
-  // any variable finishing with a $ is called an observable variable
-  // select function is for listening for any changes in the store, and we inject the selector name variable 
-  // any change in the store gets pushed to the observable variable books$
-  // we use the books$ observable variable to render in our html file
   deleteModal : any 
   idToDelete: number = 0
 
